@@ -55,7 +55,7 @@ align = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 83.0
 margin_right = 596.0
-margin_bottom = 179.0
+margin_bottom = 203.0
 
 [node name="Start" type="Button" parent="VBoxContainer/VBoxContainer"]
 margin_right = 596.0
@@ -71,6 +71,13 @@ margin_bottom = 96.0
 rect_min_size = Vector2( 250, 46 )
 custom_fonts/font = SubResource( 4 )
 text = "Credits"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_top = 100.0
+margin_right = 596.0
+margin_bottom = 120.0
+text = "v 0.1.1"
+align = 1
 
 [node name="Panel" type="Panel" parent="."]
 visible = false

@@ -93,11 +93,12 @@ func scene_change(room):
 #	anim = room.get_node("plotanim") #eventually to be used for cutscenes
 	btns = bbox.get_children()
 
-# set the image portrait (boilerplate)
+# set the image portrait
 func set_portrait(imgname):
-	icon.set_texture(load("res://chars/portraits/" + imgname + ".png"))
-	# this has the extra effect of trying to load "null.png" if the dialogue isn't spoken by anyone
-	# will be fixed later, but it works for now, even if the console yells about it
+	if imgname != "null":
+		icon.set_texture(load("res://chars/portraits/" + imgname + ".png"))
+	else:
+		icon.set_texture(null)
 
 # start talking!
 func set_txt(txt):

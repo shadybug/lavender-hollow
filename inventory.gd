@@ -29,6 +29,3 @@ func _ready():
 	items = [ 
 	InventoryItem.new(it.object, "Graveyard Dirt", "res://objects/items/graveyarddirt.png"),
 	]
-	
-	for i in items:
-		i.smell()
