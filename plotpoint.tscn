@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://plotpoint.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.357143, 0.288637, 0.552904 )
+
+[node name="plotpoint" type="Area"]
+editor/display_folded = true
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 0, 0, 2 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 4 )
+[connection signal="body_entered" from="." to="." method="_on_plotpoint_body_entered"]

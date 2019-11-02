@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/paulloz.ink/InkStory.cs" type="Script" id=1]
+[ext_resource path="res://addons/paulloz.ink/icon.svg" type="Texture" id=2]
+[ext_resource path="res://script.json" type="TextFile" id=3]
+
+[node name="Ink Story" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+InkFile = ExtResource( 3 )
+AutoLoadStory = true

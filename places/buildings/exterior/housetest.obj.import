@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/housetest.obj-57747f5091690306594cfb7ce544a20b.mesh"
+
+[deps]
+
+files=[ "res://.import/housetest.obj-57747f5091690306594cfb7ce544a20b.mesh" ]
+
+source_file="res://places/buildings/exterior/housetest.obj"
+dest_files=[ "res://.import/housetest.obj-57747f5091690306594cfb7ce544a20b.mesh", "res://.import/housetest.obj-57747f5091690306594cfb7ce544a20b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

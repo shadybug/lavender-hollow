@@ -1,0 +1,569 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Room.gd" type="Script" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://graveyard.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://graveyardtest.png" type="Texture" id=4]
+[ext_resource path="res://plotpoint.gd" type="Script" id=5]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://chars/ghosts/ghost.tscn" type="PackedScene" id=7]
+[ext_resource path="res://gravestone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://chars/ghosts/tien.tscn" type="PackedScene" id=9]
+[ext_resource path="res://chars/ghosts/qyllia.tscn" type="PackedScene" id=10]
+[ext_resource path="res://fence.tscn" type="PackedScene" id=11]
+[ext_resource path="res://fencecorner.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://addons/dialogue_tree/scripts/dialogue.gd" type="Script" id=14]
+[ext_resource path="res://addons/dialogue_tree/assets/Icon.png" type="Texture" id=15]
+
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "daynight"
+length = 720.0
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 90, 180, 270, 360, 450, 540, 630, 720 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -45, 0, 0 ), Vector3( -45, -45, 0 ), Vector3( -45, -90, 0 ), Vector3( -45, -45, 0 ), Vector3( -45, 0, 0 ), Vector3( -45, 45, 0 ), Vector3( -45, 90, 0 ), Vector3( -45, 45, 0 ), Vector3( -45, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 45, 135, 180, 270, 450, 540, 585, 675 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.694118, 0.337255, 1 ), Color( 1, 0.694118, 0.337255, 1 ), Color( 0.807843, 0.968627, 1, 1 ), Color( 0.807843, 0.968627, 1, 1 ), Color( 1, 0.682353, 0.94902, 1 ), Color( 1, 0.682353, 0.94902, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 180, 360, 540, 720 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.1, 0.0, 0.1, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../WorldEnvironment:environment:background_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 90, 270, 450, 630 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.67451, 0.796078, 0.831373, 1 ), Color( 0.67451, 0.796078, 0.831373, 1 ), Color( 0.121569, 0.0313726, 0.2, 1 ), Color( 0.121569, 0.0313726, 0.2, 1 ), Color( 0.67451, 0.796078, 0.831373, 1 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 570, 600, 630, 660, 690, 720, 750 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "test timescale"
+length = 24.0
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12, 15, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -45, 0, 0 ), Vector3( -45, -45, 0 ), Vector3( -45, -90, 0 ), Vector3( -45, -45, 0 ), Vector3( -45, 0, 0 ), Vector3( -45, 45, 0 ), Vector3( -45, 90, 0 ), Vector3( -45, 45, 0 ), Vector3( -45, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 4.5, 6, 9, 15, 18, 19.5, 22.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.694118, 0.337255, 1 ), Color( 1, 0.694118, 0.337255, 1 ), Color( 0.807843, 0.968627, 1, 1 ), Color( 0.807843, 0.968627, 1, 1 ), Color( 1, 0.682353, 0.94902, 1 ), Color( 1, 0.682353, 0.94902, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6, 12, 18, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.1, 0.0, 0.1, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../WorldEnvironment:environment:background_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3, 9, 15, 21 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.67451, 0.796078, 0.831373, 1 ), Color( 0.67451, 0.796078, 0.831373, 1 ), Color( 0.121569, 0.0313726, 0.2, 1 ), Color( 0.121569, 0.0313726, 0.2, 1 ), Color( 0.67451, 0.796078, 0.831373, 1 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 6, 18 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "change_time"
+}, {
+"args": [  ],
+"method": "change_time"
+} ]
+}
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.357143, 0.288637, 0.552904 )
+
+[sub_resource type="Environment" id=5]
+background_mode = 1
+background_color = Color( 0.67451, 0.796078, 0.831373, 1 )
+ambient_light_color = Color( 0.266667, 0.266667, 0.266667, 1 )
+ambient_light_energy = 2.0
+dof_blur_far_distance = 5.0
+dof_blur_far_transition = 10.0
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+room = "graveyard"
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 0 )
+shadow_enabled = true
+shadow_bias = 0.02
+shadow_reverse_cull_face = true
+directional_shadow_normal_bias = 0.0
+directional_shadow_depth_range = 1
+directional_shadow_max_distance = 20.0
+
+[node name="Sunanim" type="AnimationPlayer" parent="DirectionalLight"]
+autoplay = "test timescale"
+anims/daynight = SubResource( 1 )
+"anims/test timescale" = SubResource( 2 )
+
+[node name="Node" type="Node" parent="DirectionalLight/Sunanim"]
+
+[node name="Container" type="Spatial" parent="."]
+transform = Transform( 0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 0, 0 )
+
+[node name="Player" parent="Container" instance=ExtResource( 2 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -13, 0, 22 )
+
+[node name="Ground" type="MeshInstance" parent="Container"]
+transform = Transform( 1.563, 0, 0, 0, 1.563, 0, 0, 0, 1.563, 0, 0, 0.5 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 3 )
+
+[node name="plotpoint" type="Area" parent="Container"]
+editor/display_folded = true
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 0, 0, 2 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Container/plotpoint"]
+shape = SubResource( 4 )
+
+[node name="Door" parent="Container" instance=ExtResource( 6 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -13.5, 0, 20 )
+nextscene = "res://Mainfloor.tscn"
+telecation = Vector3( 3.5, 0, 3 )
+
+[node name="ghost" parent="Container" instance=ExtResource( 7 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 1, 1, -2.25 )
+
+[node name="Plot 5" type="Spatial" parent="Container"]
+editor/display_folded = true
+
+[node name="Gravestone" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 1, 0, -2 )
+text = "Here lies\\nDee Cayed"
+
+[node name="Gravestone2" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.563, 0, 0, 0, 1.563, 0, 0, 0, 1.563, 3, 0, -2 )
+text = "grave_emma"
+
+[node name="Gravestone3" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 5, 0, -2 )
+text = "portal"
+
+[node name="Gravestone4" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 7, 0, -2 )
+text = "summoning"
+
+[node name="Gravestone5" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 7, 0, -5 )
+text = "test"
+
+[node name="Gravestone6" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 5, 0, -5 )
+text = "test"
+
+[node name="Gravestone7" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 3, 0, -5 )
+text = "test"
+
+[node name="Gravestone8" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 1, 0, -5 )
+text = "test"
+
+[node name="Gravestone9" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -1, 0, -5 )
+text = "test"
+
+[node name="Gravestone10" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -1, 0, -8 )
+text = "test"
+
+[node name="Gravestone11" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 1, 0, -8 )
+text = "test"
+
+[node name="Gravestone12" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 3, 0, -8 )
+text = "test"
+
+[node name="Gravestone13" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 5, 0, -8 )
+text = "test"
+
+[node name="Gravestone14" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 7, 0, -8 )
+text = "test"
+
+[node name="Gravestone15" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 9, 0, -8 )
+text = "test"
+
+[node name="Gravestone16" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 11, 0, -8 )
+text = "test"
+
+[node name="Gravestone17" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 13, 0, -8 )
+text = "test"
+
+[node name="Gravestone18" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 15, 0, -8 )
+text = "test"
+
+[node name="Gravestone19" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 15, 0, -5 )
+text = "test"
+
+[node name="Gravestone20" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 15, 0, -2 )
+text = "test"
+
+[node name="Gravestone21" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 13, 0, -2 )
+text = "test"
+
+[node name="Gravestone22" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 11, 0, -2 )
+text = "test"
+
+[node name="Gravestone23" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 9, 0, -2 )
+text = "test"
+
+[node name="Gravestone24" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 9, 0, -5 )
+text = "test"
+
+[node name="Gravestone25" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 11, 0, -5 )
+text = "test"
+
+[node name="Gravestone26" parent="Container/Plot 5" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 13, 0, -5 )
+text = "test"
+
+[node name="Plot 6" type="Spatial" parent="Container"]
+editor/display_folded = true
+
+[node name="Gravestone27" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -18, 0, 13 )
+text = "test"
+
+[node name="Gravestone28" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -16, 0, 13 )
+text = "test"
+
+[node name="Gravestone29" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -14, 0, 13 )
+text = "test"
+
+[node name="Gravestone30" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -12, 0, 13 )
+text = "test"
+
+[node name="Gravestone31" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -10, 0, 13 )
+text = "test"
+style = 1
+
+[node name="Gravestone32" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -8, 0, 13 )
+text = "test"
+
+[node name="Gravestone33" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -6, 0, 13 )
+text = "test"
+
+[node name="Gravestone34" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -6, 0, 16 )
+text = "test"
+
+[node name="Gravestone35" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -8, 0, 16 )
+text = "test"
+
+[node name="Gravestone36" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -6, 0, 10 )
+text = "test"
+
+[node name="Gravestone37" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -8, 0, 10 )
+text = "test"
+
+[node name="Gravestone38" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -10, 0, 10 )
+text = "test"
+
+[node name="Gravestone39" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -12, 0, 10 )
+text = "test"
+
+[node name="Gravestone40" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -14, 0, 10 )
+text = "test"
+style = 3
+
+[node name="Gravestone41" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -16, 0, 10 )
+text = "test"
+
+[node name="Gravestone42" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -18, 0, 10 )
+text = "test"
+
+[node name="Gravestone43" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -18, 0, 7 )
+text = "test"
+
+[node name="Gravestone44" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -16, 0, 7 )
+text = "test"
+
+[node name="Gravestone45" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -14, 0, 7 )
+text = "test"
+
+[node name="Gravestone46" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -12, 0, 7 )
+text = "test"
+
+[node name="Gravestone47" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -9.99999, 0, 7 )
+text = "test"
+
+[node name="Gravestone48" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -7.99999, 0, 7 )
+text = "test"
+
+[node name="Gravestone49" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -5.99999, 0, 7 )
+text = "test"
+
+[node name="Gravestone50" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -7.99999, 0, 4 )
+text = "test"
+
+[node name="Gravestone51" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -9.99999, 0, 4 )
+text = "test"
+
+[node name="Gravestone52" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -12, 0, 4 )
+text = "test"
+
+[node name="Gravestone53" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -14, 0, 4 )
+text = "test"
+
+[node name="Gravestone54" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -16, 0, 4 )
+text = "test"
+
+[node name="Gravestone55" parent="Container/Plot 6" instance=ExtResource( 8 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -18, 0, 4 )
+text = "test"
+
+[node name="Door2" parent="Container" instance=ExtResource( 6 )]
+transform = Transform( -1.5625, 0, -1.36598e-07, 0, 1.5625, 0, 1.36598e-07, 0, -1.5625, -13.5, 0, 17 )
+nextscene = "res://Mainfloor.tscn"
+telecation = Vector3( 3.5, 0, -2 )
+
+[node name="tien" parent="Container" instance=ExtResource( 9 )]
+transform = Transform( 1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, -14, 1, 10 )
+knot = "tien"
+
+[node name="qyllia" parent="Container" instance=ExtResource( 10 )]
+transform = Transform( 2.44141, 0, 0, 0, 2.44141, 0, 0, 0, 2.44141, -10, 1, 13 )
+knot = "qyllia_write"
+
+[node name="fence" type="Spatial" parent="Container"]
+
+[node name="Scene Root" parent="Container/fence" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 19 )
+
+[node name="Scene Root2" parent="Container/fence" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 19 )
+
+[node name="Scene Root3" parent="Container/fence" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 19 )
+
+[node name="Scene Root4" parent="Container/fence" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 19 )
+
+[node name="Scene Root5" parent="Container/fence" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 19 )
+
+[node name="Spatial" parent="Container/fence" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 0, 19 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 13 )]
+
+[node name="plotanim" type="AnimationPlayer" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource( 14 )
+__meta__ = {
+"_editor_icon": ExtResource( 15 )
+}
+[connection signal="body_entered" from="Container/plotpoint" to="Container/plotpoint" method="_on_plotpoint_body_entered"]

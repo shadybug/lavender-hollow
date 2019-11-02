@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ghastyshadow.obj-43e16045b2b00ecc9a82b02e0b8aec45.mesh"
+
+[deps]
+
+files=[ "res://.import/ghastyshadow.obj-43e16045b2b00ecc9a82b02e0b8aec45.mesh" ]
+
+source_file="res://ghastyshadow.obj"
+dest_files=[ "res://.import/ghastyshadow.obj-43e16045b2b00ecc9a82b02e0b8aec45.mesh", "res://.import/ghastyshadow.obj-43e16045b2b00ecc9a82b02e0b8aec45.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

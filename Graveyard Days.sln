@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graveyard Days", "Graveyard Days.csproj", "{B082F23C-6188-43FA-84D9-4526B6219819}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	Release|Any CPU = Release|Any CPU
+	Tools|Any CPU = Tools|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B082F23C-6188-43FA-84D9-4526B6219819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B082F23C-6188-43FA-84D9-4526B6219819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B082F23C-6188-43FA-84D9-4526B6219819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B082F23C-6188-43FA-84D9-4526B6219819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B082F23C-6188-43FA-84D9-4526B6219819}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
+		{B082F23C-6188-43FA-84D9-4526B6219819}.Tools|Any CPU.Build.0 = Tools|Any CPU
+	EndGlobalSection
+EndGlobal

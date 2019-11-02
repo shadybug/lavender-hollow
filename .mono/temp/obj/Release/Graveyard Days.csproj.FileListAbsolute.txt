@@ -1,0 +1,5 @@
+/home/cicada/Codes/Graveyard Days/.mono/temp/bin/Release/Graveyard Days.dll
+/home/cicada/Codes/Graveyard Days/.mono/temp/bin/Release/Graveyard Days.pdb
+/home/cicada/Codes/Graveyard Days/.mono/temp/obj/Release/Graveyard Days.csprojAssemblyReference.cache
+/home/cicada/Codes/Graveyard Days/.mono/temp/obj/Release/Graveyard Days.dll
+/home/cicada/Codes/Graveyard Days/.mono/temp/obj/Release/Graveyard Days.pdb

@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/attic.obj-82cd3a35cc6e7a9a312707b80407da14.mesh"
+
+[deps]
+
+files=[ "res://.import/attic.obj-82cd3a35cc6e7a9a312707b80407da14.mesh" ]
+
+source_file="res://attic.obj"
+dest_files=[ "res://.import/attic.obj-82cd3a35cc6e7a9a312707b80407da14.mesh", "res://.import/attic.obj-82cd3a35cc6e7a9a312707b80407da14.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/attictestwalls.obj-51995d18f6163cb867f1b6f4b6063d55.mesh"
+
+[deps]
+
+files=[ "res://.import/attictestwalls.obj-51995d18f6163cb867f1b6f4b6063d55.mesh" ]
+
+source_file="res://attictestwalls.obj"
+dest_files=[ "res://.import/attictestwalls.obj-51995d18f6163cb867f1b6f4b6063d55.mesh", "res://.import/attictestwalls.obj-51995d18f6163cb867f1b6f4b6063d55.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
